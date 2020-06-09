@@ -38,18 +38,17 @@ class Main {
     int window = t.length();
     while(window <= s.length() ) 
     {
+      
       for(int i = 0 ; i < s.length()- window; i++ )
       {
           String sub = s.substring(i, i + window);
-          if(!checkStringinSubString(sub, t))
+          if(checkStringinSubString(sub, t))
           {
-            break;
+            return window;
           }
       }
       window++;
     }
-    if(window <= s.length())
-      return window;
     return  -1; 
       
   }
